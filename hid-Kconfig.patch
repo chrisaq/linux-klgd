@@ -1,0 +1,11 @@
+--- linux-4.3/drivers/hid/Kconfig	2015-11-02 01:05:25.000000000 +0100
++++ hid-Kconfig-patched	2015-12-10 14:58:46.613171896 +0100
+@@ -438,7 +438,7 @@
+ config LOGIWHEELS_FF
+ 	bool "Logitech wheels configuration and force feedback support"
+ 	depends on HID_LOGITECH
+-	select INPUT_FF_MEMLESS
++	select INPUT_FF_KLGD
+ 	default LOGITECH_FF
+ 	help
+ 	  Say Y here if you want to enable force feedback and range setting

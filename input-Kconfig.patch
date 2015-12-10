@@ -1,0 +1,19 @@
+--- linux-4.3/drivers/input/Kconfig	2015-11-02 01:05:25.000000000 +0100
++++ input-Kconfig-patched	2015-12-10 14:54:53.703216178 +0100
+@@ -51,6 +51,16 @@
+ 	  To compile this driver as a module, choose M here: the
+ 	  module will be called ff-memless.
+ 
++config INPUT_FF_KLGD
++        tristate "Support for force-feedback via KLGD"
++        help
++        Highly experimental alternative force-feedback implementation.
++
++        If unsure, say N.
++
++        To compile this driver as a module, choose M here: the
++        modules will be called klgd and klgd_ff_plugin respectively.
++
+ config INPUT_POLLDEV
+ 	tristate "Polled input device skeleton"
+ 	help
