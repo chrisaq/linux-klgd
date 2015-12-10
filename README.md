@@ -22,3 +22,7 @@ https://projects.archlinux.org/svntogit/packages.git/tree/trunk?h=packages/linux
 
 gpg --keyserver pgp.mit.edu --recv-keys 79BE3E4300411886
 
+
+**Based on this guide:**
+
+https://github.com/Eliasvan/Linux-Force-Feedback/wiki/Logitech-gaming-devices-using-KLGD

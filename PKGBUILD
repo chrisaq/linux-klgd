@@ -1,4 +1,5 @@
 # $Id$
+# Maintainer of this mod: chrisaq
 # Maintainer: Tobias Powalowski <tpowa@archlinux.org>
 # Maintainer: Thomas Baechler <thomas@archlinux.org>
 
@@ -11,7 +12,6 @@ pkgrel=1
 arch=('i686' 'x86_64')
 url="http://www.kernel.org/"
 license=('GPL2')
-#makedepends=('xmlto' 'docbook-xsl' 'kmod' 'inetutils' 'bc')
 makedepends=('xmlto' 'docbook-xsl' 'kmod' 'inetutils' 'bc' 'git')
 options=('!strip')
 source=("https://www.kernel.org/pub/linux/kernel/v4.x/${_srcname}.tar.xz"
@@ -80,13 +80,6 @@ prepare() {
   cp "${srcdir}/LinuxFF-KLGD/klgd.h" include/linux/input/
   #### klgd modifing build config
   sed -i '/ff-memless/a obj-$(CONFIG_INPUT_FF_KLGD) += klgd.o klgd_ff_plugin.o' drivers/input/Makefile
-  #echo "INPUT_FF_KLGD=m" >> "${srcdir}/config"
-  #echo "INPUT_FF_KLGD=m" >> "${srcdir}/config.x86_64"
-  ## Try built in, not module
-  #sed -i 's/CONFIG_INPUT_FF_MEMLESS=m/CONFIG_INPUT_FF_MEMLESS=m\nINPUT_FF_KLGD=m/' "${srcdir}/config"
-  #sed -i 's/CONFIG_INPUT_FF_MEMLESS=m/CONFIG_INPUT_FF_MEMLESS=m\nINPUT_FF_KLGD=m/' "${srcdir}/config.x86_64"
-  #echo "INPUT_FF_KLGD=m" >> "${srcdir}/config"
-  #echo "INPUT_FF_KLGD=m" >> "${srcdir}/config.x86_64"
   make mrproper
 
   if [ "${CARCH}" = "x86_64" ]; then
